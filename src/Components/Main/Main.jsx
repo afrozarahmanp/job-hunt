@@ -12,6 +12,7 @@ console.log('Hiiii');
         <div className='w-5/6 mx-auto'>
             <Header></Header>
             <Outlet></Outlet>
+            
         </div>
     );
 };

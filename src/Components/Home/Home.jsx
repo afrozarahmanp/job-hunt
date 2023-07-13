@@ -1,7 +1,12 @@
+import { useLoaderData } from "react-router-dom";
+import FeaturedJobs from "./FeaturedJobs/FeaturedJobs";
+import { useState } from "react";
 
 
 const Home = () => {
 
+    const jobData = useLoaderData();
+    const [jobCount, setJobCount] = useState(4)
     const jobs = [
         {
             id: "1",
@@ -28,6 +33,14 @@ const Home = () => {
             availableJob: "224"
         }
     ];
+
+    const sliceData = jobData.slice(0,jobCount);
+
+  
+    const showAll= ()=> {
+        setJobCount(7)
+        document.getElementById('showAll').classList.add('hidden')
+    }
 
     return (
         <div>
@@ -90,8 +103,19 @@ const Home = () => {
                     <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 </div>
 
+                <div className="grid lg:gap-16 lg:grid-cols-2 grid-cols-1 lg:w-auto w-96">
+                    {
+                        sliceData.map(job=><FeaturedJobs
+
+                        key={job.id}
+                        job={job}
+                        
+                        ></FeaturedJobs>)
+                    }
+
+                </div>
                 <div>
-                    
+                    <button onClick={showAll} id="showAll" className="btn btn-ghost text-white bg-sky-700 mt-5 mb-10">Show All</button>
                 </div>
 
                 
