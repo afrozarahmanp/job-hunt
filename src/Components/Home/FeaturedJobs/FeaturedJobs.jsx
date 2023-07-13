@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 const FeaturedJobs = ({job}) => {
-    const{logo, jobTitle, company,jobType1, jobType2,location,salary} = job
+    const{logo, jobTitle, company,jobType1, jobType2,location,salary,id} = job
     return (
         <div className="card lg:w-[600px] w-[450px] bg-base-100 shadow-lg lg:mt-30 mt-20 gap-4 p-10">
             <img className="w-48" src={logo} alt="" />
@@ -15,7 +16,8 @@ const FeaturedJobs = ({job}) => {
                 <h1 className="flex"><span><img src="/public/assets/Icons/Frame-4.png" alt="" /></span><span>{location}</span></h1>
                 <h1 className="flex"><span><img src="/public/assets/Icons/Frame.png" alt="" /></span><span>{salary}</span></h1>
             </div>
-            <button className="btn btn-ghost text-white bg-sky-700 mt-5">View Details</button>
+            <Link className="btn btn-ghost text-white bg-sky-700 mt-5" to = {`/jobDetails/${id}`}>View Details</Link>
+        
         </div>
     );
 };

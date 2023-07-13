@@ -105,12 +105,13 @@ const Home = () => {
 
                 <div className="grid lg:gap-16 lg:grid-cols-2 grid-cols-1 lg:w-auto w-96">
                     {
+                        Array.isArray(jobData)?
                         sliceData.map(job=><FeaturedJobs
 
                         key={job.id}
                         job={job}
                         
-                        ></FeaturedJobs>)
+                        ></FeaturedJobs>): null
                     }
 
                 </div>
