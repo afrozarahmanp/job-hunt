@@ -81,6 +81,23 @@ const Home = () => {
             </section>
 
 
+            {/* ---------------- Featured Jobs----------- */}
+
+            <section className="flex flex-col  items-center  lg:mt-30 mt-20">
+
+                <div className="flex flex-col text-center">
+                    <h1 className="text-2xl font-bold">Featured Jobs</h1>
+                    <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
+                </div>
+
+                <div>
+                    
+                </div>
+
+                
+
+            </section>
+
 
         </div>
     );
