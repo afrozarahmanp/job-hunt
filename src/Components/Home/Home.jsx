@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import FeaturedJobs from "./FeaturedJobs/FeaturedJobs";
 import { useState } from "react";
 
@@ -52,13 +52,12 @@ const Home = () => {
                         <div>
                             <h1 className="text-5xl font-bold">One Step Closer To Your <span className=" text-sky-700">Dream Job</span></h1>
                             <p className="py-6">Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job application from start to finish.</p>
-                            <button className="btn btn-ghost text-white bg-sky-700">Get Started</button>
+                            <Link className="btn btn-ghost text-white bg-sky-700" to={'/appliedjobs'}>Get Started</Link>
                         </div>
                     </div>
                 </div>
 
             </section>
-
 
             {/*------------ Job Category List---------- */}
 
@@ -68,7 +67,7 @@ const Home = () => {
             <section className="flex flex-col  items-center  lg:mt-30 mt-20">
 
                 <div className="flex flex-col text-center">
-                    <h1 className="text-2xl font-bold">Job Category List</h1>
+                    <h1 className="text-3xl font-bold">Job Category List</h1>
                     <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 </div>
 
@@ -99,7 +98,7 @@ const Home = () => {
             <section className="flex flex-col  items-center  lg:mt-30 mt-20">
 
                 <div className="flex flex-col text-center">
-                    <h1 className="text-2xl font-bold">Featured Jobs</h1>
+                    <h1 className="text-3xl font-bold">Featured Jobs</h1>
                     <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 </div>
 

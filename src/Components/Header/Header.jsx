@@ -28,7 +28,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn btn-ghost bg-sky-700 text-white">Start Applying</a>
+                <Link className="btn btn-ghost bg-sky-700 text-white" to={'/appliedjobs'}>Start Applying</Link>
             </div>
         </div>
 
