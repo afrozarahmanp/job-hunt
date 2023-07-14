@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import JobInfo from "./JobInfo";
 
 
 const AppliedJobs = () => {
@@ -7,7 +8,12 @@ const AppliedJobs = () => {
     console.log(appliedJobs)
     return (
         <div>
-            <h1>Applied Jobs</h1>
+            {
+                appliedJobs.map(appliedJob => <JobInfo
+                key={appliedJob.id}
+                appliedJob={appliedJob}
+                ></JobInfo>)
+            }
         </div>
     );
 };
