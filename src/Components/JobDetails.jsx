@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import {useLoaderData, useParams } from "react-router-dom";
+import { addToDb } from "./Utilities/fakedb";
 
 
 const JobDetails = () => {
     const jobDetails = useLoaderData();
     const jobId = useParams();
+
 
     const [selectedJob, setSelectedJob] = useState([])
 
@@ -14,6 +16,10 @@ const JobDetails = () => {
         setSelectedJob(job);
     }, []);
 
+    const addToAppliedJob = (appliedJob) => {
+        addToDb(appliedJob.id);
+        // console.log(appliedJob.id);
+    };
 
     return (
         <div>
@@ -46,7 +52,9 @@ const JobDetails = () => {
                         </div>
 
                     </div>
-                    <Link className="btn btn-ghost text-white bg-sky-700 mt-5" to={'/appliedjobs'}>Apply Now</Link>
+                    <button onClick={()=>addToAppliedJob(selectedJob)} className="btn btn-ghost text-white bg-sky-700 mt-5">Apply Now</button>
+
+                    {/* <Link className="btn btn-ghost text-white bg-sky-700 mt-5" to={'/appliedjobs'}>Apply Now</Link> */}
 
 
                 </div>
